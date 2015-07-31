@@ -1,1 +1,1 @@
-![alt tag](https://raw.github.com/lalitharyani/timeline/master/timeline.png)
+![alt tag](https://github.com/lalitharyani/timeline/blob/master/public/timeline.png)
