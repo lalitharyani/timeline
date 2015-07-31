@@ -1,0 +1,41 @@
+<div class="col-md-6">
+  <h2>Timeline</h2>
+  <div class="portlet-body" style="display: block;">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="timeline">
+          <% timeline_data = get_timeline_data %>
+          <% timeline_data.each do |key, value| %>
+            <article class="timeline-item alt">
+              <div class="text-right">
+                <div class="time-show first">
+                  <a href="#" class="btn btn-primary"><%= key %></a>
+                </div>
+              </div>
+            </article>
+            <% value.each_with_index do |val, i| %>
+              <% article_class = i % 2 == 0 ? "timeline-item alt" : "timeline-item" %>
+              <% span_class = i % 2 == 0 ? "arrow-alt" : "arrow" %>
+              
+              <article class="<%= article_class %>">
+                <div class="timeline-desk">
+                  <div class="panel">
+                    <div class="panel-body">
+                      <span class="<%= span_class %>"></span>
+                      <% user_img = val[3]%>
+                      <span class="timeline-icon"><%= image_tag user_img + ".jpg" %></span>
+                      <h1><%= val[0] %></h1>
+                      <p><strong><a href="javascript:"><%= val[1] %></a></strong></br>
+                       <%= val[2] %></p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
